@@ -15,5 +15,8 @@ for (let i = 0; i < 16 * 16; i++) {
   div.style.border = "1px solid black";
   div.style.aspectRatio = "1 / 1";
   div.style.width = "min(6.25%, calc(100vh/16))";
+  div.addEventListener("mouseover", () => {
+    div.style.background = "red";
+  });
   container.appendChild(div);
 }
