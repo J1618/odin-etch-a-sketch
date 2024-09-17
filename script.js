@@ -8,6 +8,7 @@ container.style.flexWrap = "wrap";
 container.style.alignContent = "center";
 container.style.justifyContent = "center";
 container.style.width = "90vh";
+container.style.background = "black";
 
 function randomColor() {
   let r = Math.floor(Math.random() * 256);
@@ -30,8 +31,11 @@ function createGrid(n) {
       div.style.aspectRatio = "1 / 1";
       div.style.width = `calc(100% / ${n})`;
       div.style.height = `calc(100% / ${n})`;
+      div.style.background = "white";
+      div.style.opacity = 1;
       div.addEventListener("mouseover", () => {
         div.style.background = randomColor();
+        div.style.opacity = Math.max(0, parseFloat(div.style.opacity) - 0.1);
       });
       container.appendChild(div);
     }
