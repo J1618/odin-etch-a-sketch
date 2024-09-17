@@ -9,6 +9,15 @@ container.style.alignContent = "center";
 container.style.justifyContent = "center";
 container.style.width = "90vh";
 
+function randomColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  let rgb =
+    "rgb(" + r.toString() + "," + g.toString() + "," + b.toString() + ")";
+  return rgb;
+}
+
 function createGrid(n) {
   if (n > 100) {
     return "ERROR";
@@ -22,7 +31,7 @@ function createGrid(n) {
       div.style.width = `calc(100% / ${n})`;
       div.style.height = `calc(100% / ${n})`;
       div.addEventListener("mouseover", () => {
-        div.style.background = "red";
+        div.style.background = randomColor();
       });
       container.appendChild(div);
     }
